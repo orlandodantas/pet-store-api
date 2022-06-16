@@ -9,17 +9,17 @@ export default class CategoryModel implements ICategoryModel {
   }
 
   public async getAll(): Promise<CategoryDTO[]> {
-    const categories = await this._connection.category.findMany();
+    const categoriesData = await this._connection.category.findMany();
 
-    return categories;
+    return categoriesData;
   }
 
   public async getById(id: string): Promise<CategoryDTO> {
-    const category = await this._connection.category.findUnique({
+    const categoryData = await this._connection.category.findUnique({
       where: { id },
     });
 
-    return category as CategoryDTO;
+    return categoryData as CategoryDTO;
   }
 
   public async create(category: CategoryDTO): Promise<CategoryDTO> {

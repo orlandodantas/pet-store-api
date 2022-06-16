@@ -13,7 +13,7 @@ export default class CategoryService implements ICategoryService {
   public async getAll(): Promise<CategoryDTO[]> {
     const categoriesData = await this._categoryModel.getAll();
 
-    if (!categoriesData) throw new NotFoundError('No category found');
+    if (!categoriesData || categoriesData.length === 0) throw new NotFoundError('No category found');
 
     return categoriesData;
   }
