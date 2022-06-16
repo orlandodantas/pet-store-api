@@ -1,14 +1,15 @@
 import 'dotenv/config';
 import express from 'express';
 import { errorMiddleware } from './middlewares';
-import { categoryRouter } from './routers';
+import { categoryRouter, productRouter } from './routers';
 
 const app = express();
 
 app.use(express.json());
 
 app
-  .use('/categories', categoryRouter);
+  .use('/categories', categoryRouter)
+  .use('/products', productRouter);
 
 const PORT = Number(process.env.SERVER_PORT);
 
