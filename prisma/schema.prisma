@@ -1,0 +1,96 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          String    @id @default(uuid())
+  description String
+  products    Product[]
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  @@map("categories")
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  price       Decimal
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  String   @map("category_id")
+  Images      Image[]
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("products")
+}
+
+model Image {
+  id        String   @id @default(uuid())
+  url       String
+  product   Product  @relation(fields: [productId], references: [id])
+  productId String   @map("product_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("images")
+}
+
+model Breed {
+  id        String   @id @default(uuid())
+  name      String
+  Pets      Pet[]
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("breeds")
+}
+
+model Specie {
+  id        String   @id @default(uuid())
+  name      String
+  Pets      Pet[]
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("species")
+}
+
+model Pet {
+  id        String   @id @default(uuid())
+  birthDate DateTime @default(now()) @map("birth_date")
+  breed     Breed    @relation(fields: [breedId], references: [id])
+  breedId   String   @map("breed_id")
+  specie    Specie   @relation(fields: [specieId], references: [id])
+  specieId  String   @map("specie_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("pets")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  role      Role     @default(USER)
+  birthDate DateTime @default(now()) @map("birth_date")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
