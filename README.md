@@ -6,17 +6,21 @@ API para uma loja de Pets
 
 :small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
 
+<!--
 :small_blue_diamond: [Funcionalidades](#funcionalidades)
 
 :small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
+-->
 
 :small_blue_diamond: [Pré-requisitos](#pré-requisitos)
 
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
 
+<!--
 :small_blue_diamond: [Como rodar os teste](#como-rodar-os-testes)
+-->
 
-:small_blue_diamond: [Dependências e Libs](#linguagens-dependencias-e-libs-utilizadas-books)
+:small_blue_diamond: [Dependências e Libs](#linguagens-dependências-e-libs-utilizadas-books)
 
 :small_blue_diamond: [Licença](#licença)
 
