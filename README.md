@@ -32,7 +32,7 @@ API para uma loja de Pets
 </p>
 <p>No momento este projeto está em desenvolvimento, mas após ser finalizado será possível, se cadastrar como novo usuário, comprar alimentos e utilitários para os pets, comprar pets e emitir Nota Fiscal.</p>
 <p>
-  O maior desafio enfrentado aqui está sendo o tempo, pois tenho que disputa-lo com meu atual trabalho, com o curso super intensivo que é o da <a hfer="https://www.betrybe.com/">Trybe</a> e claro com a minha vida pessoal.
+  O maior desafio enfrentado aqui está sendo o tempo, pois tenho que disputa-lo com meu atual trabalho, com o curso super intensivo que é o da <a href="https://www.betrybe.com/">Trybe</a> e claro com a minha vida pessoal.
  </p>
 
 <!-- Descomentar depois que estiver pronto e complementar claro!
